@@ -1,0 +1,88 @@
+body {
+    background-color:ghostwhite
+}
+
+#title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#playground {
+    border: 2px solid;
+    width: 500px;
+    height: 500px;
+    background-color: blanchedalmond;
+}
+
+.dot {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: inline-block;
+    
+}
+
+#aim{
+    background-color: red;
+    top: 200px;
+    left: 200px;
+}
+
+#player {
+    background-color: blue;
+    top: 390px;
+    left: 270px;
+}
+
+#panel {
+    justify-content: center;
+    align-self: center;
+    width: 400px;
+    height: 170px;
+    border: 2px solid black;
+    position: relative;
+    top: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+
+}
+
+#controls {
+    border: 2px solid black;
+    display:flexbox;
+    background-color: grey;
+    height: 100px;
+}
+
+.move {
+    display: inline-block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    display: flexbox;
+    left: 250px;
+    width: 50px;
+    height: 50px;
+}
+
+#L {
+    left: 200px;
+    top: 20px;
+}
+
+#U {
+    position: relative;
+    top: -50px;
+    left: 250px;;
+}
+
+#D {
+    position: relative;
+    top: -50px;
+    left: 250px;;
+}
+#R {
+    position: relative;
+    top: -130px;
+    left: 300px;;
+}
