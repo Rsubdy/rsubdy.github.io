@@ -1,0 +1,483 @@
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+hr{
+    border: 1px solid cornflowerblue;
+}
+
+h1,h2,h3,h4,p, td, th, span{
+    font-family: 'Raleway', sans-serif;
+}
+h1{
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: cornflowerblue;
+    text-transform: uppercase;
+}
+
+h2{
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: black;
+    line-height: 3rem;
+}
+
+h3{
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+h4{
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+p{
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+/* Panel powitalny */
+
+header {
+    display: block;
+    margin: 10% auto;
+    height: 300px;
+    width: 300px;
+    border: 15px solid cornflowerblue;
+    animation-name: enter;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    animation-fill-mode: both;
+}
+
+
+button{
+    display: flex;
+    margin: 2rem auto;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    border: 5px solid cornflowerblue;
+    box-shadow: 2px 3px 3px #4369af;
+}
+
+header button:after{
+    content: "zaczynamy!";
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    margin-top: 50%;
+    margin-left: 2.2rem;
+    animation-name: enter;
+    animation-duration: 1s;
+    animation-delay: 5s;
+    animation-fill-mode:backwards;
+    
+}
+
+button:active{
+    width: 30px;
+    height: 30px;
+    background-color: #4369af;
+    border: 1px #4369af;
+    margin-top: 2.3rem;
+    box-shadow: none;
+}
+
+.closeButton:hover:after{
+    content: "Zamknij";
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    margin-top: 50%;
+    margin-left: 2.2rem;
+}
+
+.startDivUp {
+    position: relative;
+    display: inline-block;
+    margin: 10%;
+    padding: 0.5rem 1rem;
+    background-color: cornflowerblue;
+    z-index: 0;
+}
+
+.prosty {
+    position: relative;
+    font-size: 2.4rem;
+    color: white;
+    
+}
+.startDivMiddle{
+    position: relative;
+    display: flex;
+    margin-top: -10%;
+    margin-left: 5%;
+    margin-right: 10%;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-color: #4369af;
+    z-index: 1;
+    
+}
+.generator {
+    position: relative;
+    font-size: 2.4rem;
+    color: white;
+}
+
+.startDivDown{
+    position: relative;
+    display: flex;
+    margin-top: -2%;
+    margin-left: 10%;
+    margin-right: 25%;
+    padding: 0.5rem 1rem;
+    background-color: cornflowerblue;
+    z-index: 0;
+}
+.faktur {
+    position: relative;
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* Panel boczny */
+
+
+aside {
+    display: none;
+    align-self: start;
+    justify-items: center;
+    flex-direction: column;
+    width: 1fr;
+    margin: 2rem;
+    padding: 2rem;
+    box-shadow: 3px 4px 4px 4px #4369af;
+}
+
+button.ready{
+    display:block;
+    margin: 1.3rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: cornflowerblue;
+    border: 1px cornflowerblue;
+    box-shadow: 2px 3px 3px #4369af;
+    animation: none;
+}
+
+aside button.ready:hover:before{
+    content: "Edycja";
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    margin-top: 50%;
+    margin-left: 2.2rem;
+}
+
+/* Panel boczny dane: */
+
+.vendorDetails{
+    display: none;
+}
+
+.buyerDetails{
+    display: none;
+}
+
+input, select {
+    display: inline-block;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    padding: 0.2rem;
+}
+
+input :active {
+    border: 2px solid #4369af;
+}
+
+.productInputs{
+    display: flex;
+}
+.priceInput, .vatInput, .quantityInput{
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+    margin: 1fr;
+    justify-content: center;
+    width: 1fr;
+}
+
+.currentProduct {
+    padding: 0.3rem;
+}
+
+.vendorAccountNr{
+    display: none;
+}
+
+#addProduct{
+    margin: 1rem;
+
+}
+#addProduct:after{
+    content: "Dodaj pozycję";
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: -0.5rem;
+    margin-left: 2.2rem;
+}
+
+#addProductList, #clearProductList{
+    margin: 0 4rem;
+    display: none;
+    justify-self: center;
+    flex-wrap: wrap;
+}
+
+#addProductList:after{
+    content: "Dodaj do faktury";
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: -0.5rem;
+    margin-left: 2.2rem;
+
+}
+
+#clearProductList:after{
+    content: "Wyczyść wszystko";
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: -0.5rem;
+    margin-left: 2.2rem;
+}
+
+.productDelete{
+    font-weight: 600;
+    color: cornflowerblue
+}
+.productDelete:hover{
+    cursor: pointer;
+    font-weight: 600;
+    color: cornflowerblue
+}
+
+#tableInterim,  p{
+    padding: 0.3rem;
+    margin: 0.3 rem;
+}
+/* Wygenerowana faktura */
+
+main {
+    display: none;
+    width: 1fr;
+    margin: 2rem;
+    box-shadow: 4px 4px 4px 4px #4369af;
+    padding: 4rem;
+}
+
+.invoiceDateNumber{
+    display: flex;
+    flex-direction: column;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+}
+
+.parties{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+}
+.invoiceBuyerDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: right;
+    
+}
+
+.invoiceTable{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+}
+
+th{
+    background-color: cornflowerblue;
+    padding: 0.3rem;
+    color: white;
+    border-right: 2px solid white;
+}
+
+td{
+    text-align: right;
+    padding: 0.4rem;
+}
+
+#sumFinal{
+    border-top: 2px solid cornflowerblue;
+}
+
+.invoiceSummary{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.invoiceSummary h3, h4{
+    padding-bottom: 0.4rem;
+}
+
+footer {
+    display: block;
+    flex-direction: row-reverse;
+    border: 4px solid #4369af;
+    margin: 0.5rem 4rem;
+    padding: 2rem;
+    padding-bottom: 0rem;
+    box-shadow: 4px 4px 4px 4px #4369af;
+}
+
+/* KeyFrames */
+
+@keyframes enter {
+    0%{
+        transform: scale(0.0);
+        opacity: 0.1
+        
+    }
+   
+    80%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+    transform: scale(1.0);
+    }
+    10%{
+    transform: scale(0.8);
+    }
+    20%{
+    transform: scale(1.0);
+    }
+}
+.pulse {
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-delay: 7s;
+    animation-iteration-count: infinite;
+    animation-fill-mode:both;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    aside {
+        display: block;
+        width: 1fr;
+        margin: 2rem;
+        padding: 2rem;
+        box-shadow: 3px 4px 4px 4px #4369af;
+        flex-shrink: initial;
+        flex-grow: initial;
+        
+    }
+    
+    main {
+        display: flex;
+        width: 1fr;
+        margin: 2rem;
+        box-shadow: 4px 4px 4px 4px #4369af;
+        padding: 4rem;
+        flex-shrink: initial;
+        flex-grow: initial;
+        flex-wrap: wrap;
+        overflow: scroll;
+    }
+
+    h1{
+        font-weight: 600;
+        font-size: 1rem;
+        color: cornflowerblue;
+        text-transform: uppercase;
+    }
+    
+    h2{
+        font-weight: 800;
+        font-size: 0.8rem;
+        color: black;
+        line-height: 2rem;
+    }
+    
+    h3{
+        font-weight: 600;
+        font-size: 0.6rem;
+        line-height: 0.6rem;
+    }
+    
+    h4{
+        font-weight: 400;
+        font-size: 0.6rem;
+    }
+    
+    p{
+        font-weight: 400;
+        font-size: 0.6rem;
+    }
+    
+    td, th{
+        font-size: 0.5rem;
+        text-align: right;
+        padding: 0.3rem;
+    }
+    .priceInput, .quantityInput{
+        display: block;
+    }
+
+    .invoiceTable{
+        display: flex;
+        justify-content: center;
+        flex-shrink: 3;
+    }
+
+    #addProductList:after{
+        content: "Dodaj do faktury";
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: -0.5rem;
+        margin-left: 2.2rem;
+    
+    }
+    
+    #clearProductList:after{
+        content: "Wyczyść wszystko";
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: -0.5rem;
+        margin-left: 2.2rem;
+    }
+    #addProductList, #clearProductList{
+        margin-top: 1.2rem;
+        
+    }
+}

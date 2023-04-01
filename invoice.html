@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./invoice.css">
+    <title>Prosty Generator Faktur</title>
+</head>
+<body>
+    <header>
+        <div class="startDivUp"><h1 class="prosty">Prosty</h1></div>
+        <div class="startDivMiddle"><h1 class="generator">Generator</h1></div>
+        <div class="startDivDown"><h1 class="faktur">Faktur</h1></div>
+        <button class="startButton pulse" alt="Start"></button>
+    </header>
+    <container class="mainer">
+    <aside>
+            <section class="invoiceDetails">
+                <h3>Data wystawienia faktury:</h3>
+                <input type="date" name="invoiceDate" id="invoiceDate">
+                <h3>Termin płatności:</h3>
+                <input type="date" name="dueDate" id="dueDate">
+                <h3>Numer faktury:</h3>
+                <input type="number" id="invoiceNumber" placeholder="0" min="1"><br><br>
+                <h3>Pozycja:</h3>
+                <input type="text" id="product" placeholder="Produkt lub usługa">
+                <div class="productInputs">
+                    <div class="priceInput">
+                        <h3>Kwota netto:</h3>
+                        <input type="number" id="nettPrice" title="Wpisz kwotę!" placeholder="0,00" step="0.01" min="0">
+                    </div>
+                    <div class="vatInput">
+                        <h3>VAT:</h3>
+                        <select name="vat" id="vat">
+                            <option value=0>0%</option>
+                            <option value=5>5%</option>
+                            <option value=8>8%</option>
+                            <option value=23>23%</option>
+                        </select>
+                    </div>
+                    <div class="quantityInput">
+                        <h3>Ilość:</h3>
+                        <input type="number" id="quantity" value="1" title="Wybierz ilość" placeholder="0" step="1" min="1">
+                    </div>
+                </div>
+                <button id="addProduct"></button>
+                <div id="tableInterim"></div>
+                <button id="addProductList"></button>
+                <button id="clearProductList"></button>
+            </section>
+            <button class="detailsReady pulse" title="Dane faktury"></button>
+            <section class="vendorDetails">
+                <h3>Nazwa sprzedawcy:</h3>
+                <input type="text" id="vendorName" placeholder="Nazwa lub imię i nazwisko">
+                <h3>Adres sprzedawcy:</h3>
+                <input type="text" id="vendorAddress" placeholder="Ulica i numer domu/lokalu">
+                <h3>Kod pocztowy i miasto:</h3>
+                <input type="text" id="vendorZipCity" placeholder="00-000 Nazwa Miasta">
+                <h3>NIP:</h3>
+                <input type="number" id="vendorNIP">
+                <h3>Numer telefonu:</h3>
+                <input type="text" id="vendorPhone" placeholder="+48600123456">
+                <h3>E-mail:</h3>
+                <input type="text" id="vendorEmail" placeholder="sprzedawca@kontakt.com">
+                <h3>Forma płatności:</h3>
+                <select id="paymentMethod" name="paymentMethod">
+                    <option value="cash">Gotówka</option>
+                    <option value="transfer">Przelew</option>
+                </select>
+                <h3 class="vendorAccountNr">Numer rachunku bankowego:</h3>
+                <input class="vendorAccountNr" type="number" id="vendorAccountNr">
+                <br>
+            </section>
+            <button class="vendorReady pulse" style="display:none" title="Dane Sprzedającego"></button>
+            <section class="buyerDetails">
+                <h3>Nazwa kupującego:</h3>
+                <input type="text" id="buyerName" placeholder="Nazwa lub imię i nazwisko">
+                <h3>Adres kupującego:</h3>
+                <input type="text" id="buyerAddress" placeholder="Ulica i numer domu/lokalu">
+                <h3>Kod pocztowy i miasto:</h3>
+                <input type="text" id="buyerZipCity" placeholder="00-000 Nazwa Miasta">
+                <h3>NIP:</h3>
+                <input type="number" id="buyerNIP">
+                <h3>Numer telefonu:</h3>
+                <input type="text" id="buyerPhone" placeholder="+48600123456">
+                <h3>E-mail:</h3>
+                <input type="text" id="buyerEmail" placeholder="sprzedawca@kontakt.com">
+                <br>
+            </section>
+            <button class="buyerReady pulse" style="display:none" title="Dane Kupującego"></button>
+            <button class="closeAside closeButton" style="display:none"></button>
+    </aside>
+    <main>
+        <container class="invoiceDateNumber">
+            <h1 class="invoiceTitle">Faktura nr <span class="invoiceNumber">A1/01/23</span></h1>
+            <h3>Data wystawienia: <span class="invoiceDate">01-01-2023</span></h3>
+            <h3>Data wydania towaru lub wykonania usługi: <span class="invoiceDate">01-01-2023</span></h3>
+        </container>
+        <container class="parties">
+            <figure class="invoiceVendorDetails">
+                <h2>Sprzedawca:</h2>
+                <h3 class="vendorName">Projekt R<br>Robert Subdysiak</h3><br>
+                <h4 class="vendorAddress">ul. Racławicka 46 lok. 47</h4><h4 class="vendorZipCity">02-601 Warszawa</h4>
+                <h4 class="vendorNIP">NIP: 5213332527</h4>
+                <h4 class="vendorPhone">tel.(+48) 534725156</h4>
+                <h4 class="vendorEmail">subdysiak@gmail.com</h4>
+            </figure>
+            <figure class="invoiceBuyerDetails">
+                <h2>Nabywca:</h2>
+                <h3 class="buyerName">Wspinacz Wspinaczkowy</h3><br><br>
+                <h4 class="buyerAddress">ul. Sukcesu 1</h4><h4 class="buyerZipCity">01-123 Miłe Miasto</h4>
+                <h4 class="buyerNIP">NIP: 123456789</h4>
+                <h4 class="buyerPhone">tel.(+48) 500600700</h4>
+                <h4 class="buyerEmail">uczesiewspinac@klient.pl</h4>
+            </figure>
+        </container>
+        <container class="invoiceTable">
+            <table cellpadding="1">
+                <thead>
+                    <th>Nazwa</th><th>Sztuk</th><th>Cena netto</th><th>VAT</th><th>Łącznie netto</th><th>Łącznie VAT</th><th>Łącznie Brutto</th>
+                </thead>
+                <tbody class="invoiceTableContent">
+                </tbody>
+                <tfoot>
+                <tr><td colspan="4">Razem:</td><td id="invoiceNettTotal">0,00 zł</td><td id="invoiceVATTotal">0,00 zł</td><td id="invoiceGrossTotal">0,00 zł</td></tr>
+                </tfoot>
+            </table>
+        </container>
+        <container class="invoiceSummary">
+        <h3>Razem do zapłaty:</h3>
+        <h4><span id="invoicePrice">0</span> zł</h4>
+        <h3>Termin płatności:</h3>
+        <h4 id="invoiceDueDate">01-01-2023</h4>
+        <h3>Forma płatności:</h3>
+        <h4 id="invoiceMethod">Gotówka</h4>
+        <h3 class="vendorAccountNr">Numer konta:</h3>
+        <h4 class="vendorAccountNr" id="invoiceAccountNr">98********0000**********89</h4>
+        <h3>Płatność podzielona:</h3>
+        <h4>NIE</h4>
+        </container>
+    </main>
+    </container>
+    <footer>
+        <h4 class="pageDetails">Przygotowałem tę stronę w ramach ćwiczeń z podstaw jQuery i CSS.
+        <br>Animacje mają na celu delikatnie naprowadzić użytkownika na dalsze kroki. Formularz pozwala wygenerować względnie estetyczną fakturę w kilku krokach i edytować dane, a następnie wydrukować całość jako PDF.</h4>
+        <button class="closeButton pulse"></button>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./invoice.js"></script>    
+
+</body>
+</html>
