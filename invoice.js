@@ -149,6 +149,7 @@ function generator(){
                 $('#invoiceNettTotal').html($invoiceNettTotal  + " zł");
                 $('#invoiceGrossTotal').html($invoiceGrossTotal + " zł");
                 $('#invoiceVATTotal').html($invoiceVATTotal + " zł");
+                $('#invoicePrice').html($invoiceGrossTotal);
                 });
                 
                 function clearInterim(){
