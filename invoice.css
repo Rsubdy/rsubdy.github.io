@@ -100,14 +100,14 @@ button:active{
     position: relative;
     display: inline-block;
     margin: 10%;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     background-color: cornflowerblue;
     z-index: 0;
 }
 
 .prosty {
     position: relative;
-    font-size: 2.4rem;
+    font-size: 1.2rem;
     color: white;
     
 }
@@ -117,14 +117,14 @@ button:active{
     margin-top: -10%;
     margin-left: 5%;
     margin-right: 6%;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.25rem 0.25rem 0.25rem 0.25rem;
     background-color: #4369af;
     z-index: 1;
     
 }
 .generator {
     position: relative;
-    font-size: 2.4rem;
+    font-size: 1.2rem;
     color: white;
 }
 
@@ -134,13 +134,13 @@ button:active{
     margin-top: -2%;
     margin-left: 10%;
     margin-right: 25%;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     background-color: cornflowerblue;
     z-index: 0;
 }
 .faktur {
     position: relative;
-    font-size: 2.5rem;
+    font-size: 1.25rem;
     color: white;
 }
 
@@ -439,24 +439,24 @@ header {
 }
 
 .startDivUp {
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 1rem;
 }
 
 .prosty {
-    font-size: 1.2rem;
+    font-size: 2.4rem;
 }
 .startDivMiddle{
-    padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 .generator {
-    font-size: 1.2rem;
+    font-size: 2.4rem;
 }
 
 .startDivDown{
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 1rem;
 }
 .faktur {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
 }
 
 
