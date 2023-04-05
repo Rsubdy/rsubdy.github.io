@@ -1,9 +1,21 @@
+var window_size = window.matchMedia('(min-width: 767px)');
+
 function generator(){
-    $('.startButton').on('click', ()=>{
+    $('#startButton').on('click', ()=>{
         $('header').slideUp();
-        $('.mainer').css('display', 'block');
-        $('aside').css('display', 'block');
-        $('main').css('display', 'block');
+        if (window.matchMedia('(min-width: 767px)').matches){
+            $('.mainer').css('display', 'flex');
+            $('aside').css('display', 'inline-block');
+            $('aside').css('width', '30%');
+            $('main').css('display', 'inline-block');
+            $('.info').slideUp();
+        }
+        else {
+            $('.mainer').css('display', 'flex');
+            $('aside').css('display', 'block');
+            $('.info').slideUp();
+        }
+        
     });
 
     // Obsługa guzików formularza 
@@ -40,6 +52,7 @@ function generator(){
             $(event.currentTarget).toggleClass("ready");
             $('main').css('display', 'inline-block');
             $('.closeAside').slideDown();
+            $('#closeInfo').slideDown();
         } else {
             $('#buyerName').focus();
         }
@@ -47,6 +60,8 @@ function generator(){
     
     $('.closeButton').on('click', event=>{
         $(event.currentTarget).parent().slideUp();
+        $('main').css('box-shadow', 'none');
+        $('main').css('border', '1px solid cornflowerblue');
     })
 
     // Uzupełnianie danych faktury

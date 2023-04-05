@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./invoice.css">
+    <link rel="stylesheet" href="./mobile.css">
     <title>Prosty Generator Faktur</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
         <div class="startDivUp"><h1 class="prosty">Prosty</h1></div>
         <div class="startDivMiddle"><h1 class="generator">Generator</h1></div>
         <div class="startDivDown"><h1 class="faktur">Faktur</h1></div>
-        <button class="startButton pulse" alt="Start"></button>
+        <button class="pulse" id="startButton" alt="Start"></button>
     </header>
     <container class="mainer">
     <aside>
@@ -91,7 +91,11 @@
                 <br>
             </section>
             <button class="buyerReady pulse" style="display:none" title="Dane Kupującego"></button>
+            <p id="closeInfo" style="display:none">Jeśli dane na fakturze nie wymagają zmiany, możesz zamknąć panel guzikiem.<br><br>Następnie możesz wydrukować fakturę lub zapisać ją do PDF.<br><br>W tym celu wybierz plik/drukuj lub wciśnij CMD + P (MacOS) lub CTRL+P (Windows).<br><br>Aby rozpocząć od nowa przeładuj stronę.</p>
+            <br><br>
             <button class="closeAside closeButton" style="display:none"></button>
+            <br>
+            
     </aside>
     <main>
         <container class="invoiceDateNumber">
@@ -143,13 +147,15 @@
         </container>
     </main>
     </container>
-    <footer>
+    <div class="info enter">
         <h4 class="pageDetails">Przygotowałem tę stronę w ramach ćwiczeń z podstaw jQuery i CSS.
-        <br>Animacje mają na celu delikatnie naprowadzić użytkownika na dalsze kroki. Formularz pozwala wygenerować względnie estetyczną fakturę w kilku krokach i edytować dane, a następnie wydrukować całość jako PDF.</h4>
-        <button class="closeButton pulse"></button>
-    </footer>
+        <br>
+        <br>Animacje guzików mają na celu naprowadzić użytkownika na dalsze kroki.
+        <br>
+        <br>Formularz pozwala wygenerować względnie estetyczną fakturę w kilku krokach i edytować dane, a następnie pozwala wydrukować całość lub zapisać jako PDF.</h4>
+    </div>
+    <!--<script src="./invoice_vanilla.js"></script>-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="./invoice.js"></script>    
-
 </body>
 </html>
