@@ -42,7 +42,7 @@ p{
 /* Panel powitalny */
 
 header {
-    display: block;
+    display: inline;
     margin: 20px auto;
     height: 300px;
     width: 280px;
