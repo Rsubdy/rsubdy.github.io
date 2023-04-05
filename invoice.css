@@ -438,6 +438,27 @@ header {
     width: 300px;
 }
 
+.startDivUp {
+    padding: 0.25rem 0.5rem;
+}
+
+.prosty {
+    font-size: 1.2rem;
+}
+.startDivMiddle{
+    padding: 0.25rem 0.25rem 0.25rem 0.25rem;
+}
+.generator {
+    font-size: 1.2rem;
+}
+
+.startDivDown{
+    padding: 0.25rem 0.5rem;
+}
+.faktur {
+    font-size: 1.25rem;
+}
+
 
 /* Panel boczny */
 
