@@ -48,11 +48,21 @@ function generator(){
 
     $('.buyerReady').on('click', (event)=>{
         if($('#buyerName').val()!=""){
+            if (window.matchMedia('(min-width: 767px)').matches){
             $('.buyerDetails').slideToggle();
             $(event.currentTarget).toggleClass("ready");
             $('main').css('display', 'inline-block');
             $('.closeAside').slideDown();
             $('#closeInfo').slideDown();
+            }
+            else {
+            $('.buyerDetails').slideToggle();
+            $(event.currentTarget).toggleClass("ready");
+            $('.mainer').css('display', 'block');
+            $('main').css('display', 'block');
+            $('.closeAside').slideDown();
+            $('#closeInfo').slideDown();
+            }
         } else {
             $('#buyerName').focus();
         }
