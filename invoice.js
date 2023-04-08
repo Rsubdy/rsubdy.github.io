@@ -139,43 +139,10 @@ function generator(){
         $tableInterim += "<tr><td>"+$productName+"</td><td>"+$productQuantity+"</td><td>"+$productNetPrice+" zł</td><td>"+$productVAT+"%</td><td>"+$nettTotal+" zł</td><td>"+$VATamount*$productQuantity+" zł</td><td>"+$grossTotal+" zł</td>";
         
     //Sumowanie kwot do podsumy na fakturze
-            $invoiceNettTotal = parseFloat($nettTotal + $invoiceNettTotal, 10).toFixed(2);
-            $invoiceGrossTotal = parseFloat($grossTotal + $invoiceGrossTotal, 10).toFixed(2);
-            $invoiceVATTotal = parseFloat($VATamount + $invoiceVATTotal, 10).toFixed(2);
-
-    //Dodawanie pozycji do tabeli na fakturze
-        $('#addProductList').click(()=>{
-                $('.invoiceTableContent').html($tableInterim);
-                $('#invoiceNettTotal').html($invoiceNettTotal  + " zł");
-                $('#invoiceGrossTotal').html($invoiceGrossTotal + " zł");
-                $('#invoiceVATTotal').html($invoiceVATTotal + " zł");
-                });
-                
-                function clearInterim(){
-                    $invoiceNettTotal = 0.00;
-                    $invoiceVATTotal = 0.00;
-                    $invoiceGrossTotal = 0.00;
-                    $tableInterim = '';
-                }
-                
-                setTimeout(100, clearInterim);
-
-    //Czyszczenie tabeli na fakturze
-        $('#clearProductList').click(()=>{
-            $('.invoiceTableContent').html('');
-            $('#invoiceNettTotal').html('');
-            $('#invoiceGrossTotal').html('');
-            $('#invoiceVATTotal').html('');
-            $invoiceTableContent='';
-            $tableInterim = '';
-            $invoiceNettTotal = 0.00;
-            $invoiceVATTotal = 0.00;
-            $invoiceGrossTotal = 0.00;
-            $('#tableInterim').html('');
-            $('#addProductList').slideUp();
-            $('#clearProductList').slideUp();
-
-        });
+            $invoiceNettTotal = (parseFloat($nettTotal, 10)+parseFloat($invoiceNettTotal, 10)).toFixed(2);
+            $invoiceGrossTotal = (parseFloat($grossTotal, 10)+parseFloat($invoiceGrossTotal, 10)).toFixed(2);
+            $invoiceVATTotal = (parseFloat($VATamount, 10)+parseFloat($invoiceVATTotal, 10)).toFixed(2);
+           
     //Dodawanie pozycji na formularzu
         $('#tableInterim').append($productInForm);
     }
@@ -184,8 +151,34 @@ function generator(){
             alert("Uzupełnij dane!");
         }
     });
-    
-    
+//Dodawanie pozycji do tabeli na fakturze
+
+$('#addProductList').click(()=>{
+        $('.invoiceTableContent').html($tableInterim);
+        $('#invoiceNettTotal').html($invoiceNettTotal  + " zł");
+        $('#invoiceGrossTotal').html($invoiceGrossTotal + " zł");
+        $('#invoiceVATTotal').html($invoiceVATTotal + " zł");
+        $('#invoicePrice').html($invoiceGrossTotal);
+        alert("Pozycje zostały dodane do faktury!");
+    });
+        
+
+//Czyszczenie tabeli na fakturze
+$('#clearProductList').click(()=>{
+    $('.invoiceTableContent').html('');
+    $('#invoiceNettTotal').html('');
+    $('#invoiceGrossTotal').html('');
+    $('#invoiceVATTotal').html('');
+    $invoiceTableContent='';
+    $tableInterim = '';
+    $invoiceNettTotal = 0.00;
+    $invoiceVATTotal = 0.00;
+    $invoiceGrossTotal = 0.00;
+    $('#tableInterim').html('');
+    $('#addProductList').slideUp();
+    $('#clearProductList').slideUp();
+
+});
 
 //Sprzedawca dane
 
