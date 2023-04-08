@@ -165,7 +165,7 @@ aside {
     align-self: start;
     justify-items: center;
     flex-direction: column;
-    width: 1fr;
+    width: 70%;
     margin: 10px auto;
     padding: 2rem;
     box-shadow: 3px 4px 4px 4px #4369af;
